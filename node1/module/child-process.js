@@ -10,4 +10,18 @@ It provides the ability to spawn subprocesses in a manner that is similar, but n
 const cp = require('child_process')
 // 1. I need to open calculator.
 // cp.execSync('calc');
-cp.execSync('start brave');
+// cp.execSync('start firefox');
+const { spawn } = require('node:child_process');
+const ls = spawn('ls', ['-lh', '/usr']);
+
+ls.stdout.on('data', (data) => {
+  console.log(`stdout: ${data}`);
+});
+
+ls.stderr.on('data', (data) => {
+  console.error(`stderr: ${data}`);
+});
+
+ls.on('close', (code) => {
+  console.log(`child process exited with code ${code}`);
+}); 
