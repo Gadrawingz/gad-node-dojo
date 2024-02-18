@@ -1,0 +1,2 @@
+This is the content written to file2 
+This appended text
