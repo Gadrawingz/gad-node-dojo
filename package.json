@@ -2,5 +2,8 @@
   "dependencies": {
     "figlet": "^1.7.0",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "karma": "^6.4.3"
   }
 }
